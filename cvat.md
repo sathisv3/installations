@@ -10,11 +10,11 @@ CVAT installation
 `sudo vi values.override.yaml`
 
 ```yaml
-# traefik ingress controller used 
+# traefik ingress controller used
 ingress:
   enabled: true
   hostname: cvat.internal.v3analytics.in
-  # our default DNS as internal.v3analytics.in 
+  # our default DNS as internal.v3analytics.in
   # we can use as "*.internal.v3analytics.in"
   annotations:
     cert-manager.io/issuer: letsencrypt-prod
@@ -33,6 +33,11 @@ traefik:
 
 nuclio:
   enabled: true
+  registry:
+    loginUrl: harbor.internal.v3analytics.in
+    credentials:
+      username: username_with_admin_privilage
+      password: pass1234
 
 ```
 
