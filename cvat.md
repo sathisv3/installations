@@ -45,5 +45,6 @@ nuclio:
     kubectl create ns cvat
 
 ### cvat installation by using helm 
-    helm install cavt helm-chart/ -n cvat --values values.override.yaml
+    helm upgrade --cleanup-on-fail  --install cvat helm-chart/  --namespace cvat   --values values.override.yaml 
+
 
